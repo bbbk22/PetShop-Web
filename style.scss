@@ -1,0 +1,810 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;1,400;1,500&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    // text-transform: capitalize;
+    transition: .2s linear;
+}
+
+$carrot-color: #e67e22;
+$black: #130f40;
+$white: #fff;
+$light-color: #666;
+$light-bg: #eee;
+$border: .2rem solid $black;
+$box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+
+@mixin grid($val){
+    display: grid;
+    grid-template-columns: repeat(3, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+
+
+@mixin form-butoni{
+    width: 100%;
+    text-align: center;
+
+    &:hover{
+        background: $black;
+    }
+}
+
+
+@mixin white-butoni{
+    color: $white;
+    border-color: $white;
+
+    &:hover{
+        color: $black;
+    }
+
+    &::before{
+        background: $white;
+    }
+}
+
+
+html{
+    
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $carrot-color;
+        border-radius: 5rem;
+    }
+}
+
+section{
+    padding: 5rem 9%;
+}
+
+.heading{
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 3.5rem;
+    color: $black;
+
+    span{
+        color: $carrot-color;
+    }
+
+}
+.butoni{
+    text-decoration: none;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 2.8rem;
+    border-radius: 5rem;
+    border-top-left-radius: 0;
+    border: $border;
+    cursor: pointer;
+    background: none;
+    color: $black;
+    font-size: 1.7rem;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+
+
+    &::before{
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $black;
+        z-index: -1;
+        transition: .2s linear;
+        clip-path: circle(0% at 0% 5%);
+    }
+
+    &:hover::before{
+        clip-path: circle(100%)
+        
+    }
+
+    &:hover{
+        color: $white;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+}
+
+
+.header{
+    
+    text-transform: capitalize;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: $box-shadow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateY(-10rem);
+
+
+
+
+
+    &.active{
+        transform: translateY(0rem);
+    }
+
+    .logo{
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: $black;
+        font-weight: bolder;
+
+        i{
+            color: $carrot-color;
+        }
+    }
+    .navbar a{
+        margin: 0 1rem;
+        font-size: 1.7rem;
+        color: $light-color;
+        text-decoration: none;
+
+        &:hover{
+            color: $carrot-color;
+       }
+     }
+
+     .icons a,
+     .icons div{
+        font-size: 2.5rem;
+        margin-left: 1.5rem;
+        color: $black;
+        cursor: pointer;
+
+        &:hover{
+            color: $carrot-color;
+        }
+
+     }
+     .login-form{
+        position: absolute;
+        top: 120%;
+        right: 2rem;
+        width: 35rem;
+        border-radius: 1rem;
+        background: $white;
+        box-shadow: $box-shadow;
+        padding: 2rem;
+        display: none;
+         
+        &.active{
+            display: block;
+            animation: fadeIn .4s linear;
+        }
+        h3{
+            color: $black;
+            font-size: 2.5rem;
+            padding-bottom: .5rem;
+
+        }
+
+        .box{
+            width: 100%;
+            border-bottom: $border;
+            border-width: .1rem;
+            padding: 1.5rem 0;
+            font-size: 1.6rem;
+            color: $black;
+            text-transform: none;
+            margin: 1rem 0;
+        }
+
+        .remember-me{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 0;
+
+            label{
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: $light-color;
+            }
+        }
+
+        .butoni{
+            @include form-butoni();
+            margin: 1.5rem 0;
+        }
+
+        .links{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            
+
+            a{
+                font-size: 1.4rem;
+                color: $carrot-color;
+
+                &:hover{
+                    color: $black;
+                    text-decoration: underline;
+                }
+            }
+        }
+     }
+}
+
+#menu-butoni{
+    display: none;
+}
+
+.home{
+    text-transform: capitalize;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: url(dogphoto3.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    text-align:right;
+   
+
+    .content{
+        
+       
+        width: 50rem;
+       
+
+        h3{
+            font-size: 6rem;
+            color: $carrot-color;
+            padding-bottom: 1rem;
+            
+
+         span{
+            color: $white;
+            }
+        }
+
+        .butoni{
+            @include white-butoni();
+        }
+    }
+
+    .wave{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 9.5rem;
+
+    }
+}
+
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .image{
+        flex: 1 1 40rem;
+
+
+        img{
+            width: 100%;
+            border-radius: 2.5rem;
+        }
+    }
+
+    .content{
+        flex: 1 1 40rem;
+      
+
+        h3{
+            color: $black;
+            font-size: 4.2rem;
+
+        span{
+            color: $carrot-color;
+        }
+      }
+      p{
+        font-size: 1.8rem;
+        color: $light-color;
+        padding: 1rem 0;
+        font-weight: bold;
+        line-height: 2;
+
+        span{
+            color: $carrot-color;
+        }
+
+      }
+    }
+}
+
+
+
+
+
+.scroll div{
+    display: flex;
+    gap: 2em;
+  }
+  .scroll p{
+    font-size: 2.5em;
+    color:white;
+    font-style: italic;
+    margin-bottom: 0;
+    line-height: 10px;
+  }
+  
+  /* .RightToLeft{
+    animation: RightToLeft 15s infinite linear;
+  }
+  @keyframes RightToLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  } */
+  .LeftToRight{
+    animation: LeftToRight 15s infinite linear;
+  }
+  @keyframes LeftToRight{
+    from {
+      transform: translateX(-50%);
+    }
+    to{
+      transform: translateX(0%);
+    }
+  }
+  
+
+  .shop .box-container{
+    @include grid(30rem);
+
+    .box{
+        position: relative;
+        overflow: hidden;
+
+
+        &:hover{
+            .image img{
+                transform: scale(1.1);
+            }
+            .icons{
+                transform: translateX(0rem);
+            }
+        }
+
+        .image{
+            height: 45rem;
+            width: 100%;
+            overflow: hidden;
+          
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+      .icons{
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            z-index: 10;
+            transform: translateX(10rem);
+
+            a{
+                display: block;
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                font-size: 2.2rem;
+                margin-top: 1rem;
+                background: $white;
+                color: $black;
+                text-align: center;
+                text-decoration: none;
+
+
+                &:hover{
+                    color: $white;
+                    background: $carrot-color;
+                }
+            }
+
+        }
+        
+        .content{
+            padding: 1rem 0;
+            text-align: center;
+
+            h3{
+                font-size: 2.2rem;
+                color: $black;
+                padding-bottom: .5rem;
+            }
+            .amount{
+                font-size: 2.5rem;
+                color: $carrot-color;
+            }
+        }
+    }
+  }
+
+   .services .box-container {
+    @include grid(30rem);
+
+
+    .box{
+        background: $light-bg;
+        padding: 3rem;
+        text-align: center;
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+
+        // &:nth-child(even){
+        //     border-radius: 79% 21% 81% 19% / 58% 93% 7% 42%;
+        // }
+
+        &:hover{
+            border-radius: .5rem;
+        }
+        i{
+            height: 6.5rem;
+            width: 6.5rem;
+            line-height: 6.5rem;
+            font-size: 3rem;
+            color: $white;
+            background: $carrot-color;
+            border-radius: 50%;
+            margin-bottom: .5rem;
+        }
+
+        h3{
+            font-size: 2.2rem;
+            color: $black;
+            padding: 1rem 0;
+        }
+    }
+
+   } 
+
+   
+
+   .contact{
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    .image{
+        flex: 1 1 40rem;
+        
+        img{
+            width: 100%;
+        }
+    }
+
+    form{
+        flex: 1 1 40rem;
+        padding: 2rem 7%;
+
+
+        .butoni{
+            @include form-butoni();
+        }
+
+       h3{
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        color: $black;
+
+        span{
+            color: $carrot-color;
+        }
+       }
+
+       .box, textarea{
+        width: 100%;
+        border-bottom: $border;
+        border-width: .1rem;
+        font-size: 1.6rem;
+        text-transform: none;
+        color: $black;
+        padding: 1.5rem 0;
+        margin: 1rem 0;
+       }
+
+       textarea{
+        height: 15rem;
+        resize: none;
+       }
+    }
+
+}
+
+.footeri{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+    
+    background-color: $carrot-color;
+    padding: 15px 0;
+
+    .container{
+        max-width: 1170px;
+        margin: auto;
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+
+            ul{
+                list-style: none;
+            }
+        }
+    }
+    .footer-col{
+        width: 25%;
+        padding: 0 15px;
+
+
+        h4{
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                background-color: #130f40;
+                height: 2px;
+                box-sizing: border-box;
+                width: 50px;
+            }
+        }
+
+        ul li:not(:last-child){
+            margin-bottom: 10px;
+
+    
+        }
+
+        ul li a{
+            
+            font-size: 16px;
+            color:#fff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+
+            &:hover{
+                color: #ffffff;
+                padding-left: 8px;
+            }
+        }
+
+        .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50px;
+            color: #fff;
+            transition: all 0.3s ease;
+
+
+            &:hover{
+                color: $black;
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+// media queries
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+
+    }
+
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding: 5rem 2rem;
+    }
+
+    .home{
+        justify-content: center;
+        background-position: right;
+
+     .content{
+        text-align: center;
+        padding-bottom: 5rem;
+
+     h3{
+        font-size: 4.5rem;
+        }
+     }
+    }
+    
+}
+
+@media (max-width: 768px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    #menu-butoni{
+        display: inline-block;
+    }
+    
+
+    .header{
+
+        .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: $white;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            &.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            a{
+                display: block;
+                margin: 2rem;
+                font-size: 2rem;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+
+    }
+
+    .header .login-form{
+        width: 90%;
+    }
+    .footer-col{
+        width: 100%;
+        
+    }
+
+}
+
+
+.dog-food,
+.cat-food{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3.5rem ;
+
+    .image{
+        flex: 1 1 40rem;
+
+        img{
+            width: 100%;
+        }
+        &:hover img{
+            z-index: 1;
+            transform: scale(1.10);
+            
+        }
+    }
+    .content{
+        flex: 1 1 40rem;
+        text-align: center;
+        padding: 2rem;
+
+
+        h3{
+            font-size: 3.5rem;
+            color: $black;
+
+            span{
+                color: $carrot-color;
+            }
+        }
+        p{
+            padding: 1rem 0;
+            line-height: 2;
+            color: $light-color;
+            font-size: 1.5rem;
+        }
+        .amount{
+            font-size: 3.5rem;
+            color: $black;
+            padding: .5rem 0;
+        }
+        a{
+            img{
+                height: 15rem;
+                margin-top: 1rem;
+            }
+            &:hover img{
+                transform:rotate(15deg) ;
+                
+            }
+        }
+    }
+}
+
+.cat-food{
+    flex-wrap: wrap-reverse;
+}
