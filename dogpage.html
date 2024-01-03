@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,28 +17,34 @@
             box-sizing: border-box;
         }
 
-        body, html {
+        body,
+        html {
             display: flex;
             align-items: center;
             justify-content: center;
             background: #ddd;
             width: 100%;
             height: 100%;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            /* Remove default margin */
         }
 
         .photos {
             display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
             width: 90%;
             justify-content: space-around;
         }
 
         .single-photo {
-            width: 100%; /* Adjust to full width initially */
-            max-width: 360px; /* Set a maximum width */
+            width: 100%;
+            /* Adjust to full width initially */
+            max-width: 360px;
+            /* Set a maximum width */
             height: 400px;
-            margin: 16px; /* Add margin between items */
+            margin: 16px;
+            /* Add margin between items */
             padding: 24px;
             background: #fff;
             position: relative;
@@ -103,21 +110,23 @@
 
         @media screen and (min-width: 600px) {
             .single-photo {
-                width: 48%; /* Two items per row on larger screens */
+                width: 48%;
+                /* Two items per row on larger screens */
             }
         }
 
         @media screen and (min-width: 900px) {
             .single-photo {
-                width: 30%; /* Three items per row on even larger screens */
+                width: 30%;
+                /* Three items per row on even larger screens */
             }
         }
-        
     </style>
 </head>
+
 <body>
-     <!-- header section starts -->
-     <header class="header">
+    <!-- header section starts -->
+    <header class="header">
         <a href="#" class="logo"><i class="fas fa-paw"></i>pet shop</a>
 
         <nav class="navbar">
@@ -143,7 +152,7 @@
                 <label for="remember-me">remember me</label>
             </div>
             <input type="submit" value="sign in" class="butoni">
-            
+
             <div class="links">
                 <a href="#">forget password</a>
                 <a href="#">sign up</a>
@@ -151,7 +160,7 @@
         </form>
 
     </header>
-   
+
 
     <!-- header section ends -->
     <div class="photos">
@@ -175,4 +184,5 @@
         </div>
     </div>
 </body>
+
 </html>
