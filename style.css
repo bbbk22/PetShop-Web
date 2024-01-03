@@ -289,16 +289,16 @@ section {
 }
 
 /* .RightToLeft{
-  animation: RightToLeft 15s infinite linear;
-}
-@keyframes RightToLeft {
-  from {
-    transform: translateX(0%);
+    animation: RightToLeft 15s infinite linear;
   }
-  to {
-    transform: translateX(-50%);
-  }
-} */
+  @keyframes RightToLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  } */
 .LeftToRight {
   animation: LeftToRight 15s infinite linear;
 }
@@ -436,7 +436,8 @@ section {
 .contact form h3 span {
   color: #e67e22;
 }
-.contact form .box, .contact form textarea {
+.contact form .box,
+.contact form textarea {
   width: 100%;
   border-bottom: 0.2rem solid #130f40;
   border-width: 0.1rem;
@@ -548,6 +549,16 @@ section {
   .home .content h3 {
     font-size: 4.5rem;
   }
+  .shop .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  .services .box-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
 }
 @media (max-width: 768px) {
   .footer-col {
@@ -575,6 +586,16 @@ section {
     margin: 2rem;
     font-size: 2rem;
   }
+  .shop .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  .services .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
 }
 @media (max-width: 450px) {
   html {
@@ -585,6 +606,16 @@ section {
   }
   .footer-col {
     width: 100%;
+  }
+  .shop .box-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(30rem, 1fr));
+    gap: 1.5rem;
+  }
+  .services .box-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(30rem, 1fr));
+    gap: 1.5rem;
   }
 }
 .dog-food,
