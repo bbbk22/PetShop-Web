@@ -94,6 +94,10 @@
             transform: translateY(60px);
             transition: 0.5s;
         }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
 
         .photo-text h3 {
             margin: 0;
@@ -124,12 +128,33 @@
         <a href="#" class="logo"><i class="fas fa-paw"></i>pet shop</a>
 
         <nav class="navbar">
-            <a href="index.html/#home">home</a>
-            <a href="index.html/#about">about</a>
-            <a href="index.html/#shop">shop</a>
-            <a href="index.html/#services">services</a>
-            <a href="index.html/#contact">contact</a>
+            <a href="index.html">home</a>
+            <a href="index.html#about">about</a>
+            <a href="index.html#shop">shop</a>
+            <div class="btn-group">
+                <button type="button" class="btn"><a href="dogpage.html">For Dogs</a></button>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="foodfordog.html">Food</a></li>
+                  <li><a class="dropdown-item" href="accessoriesfordog.html">Accessories</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn"><a href="catpage.html">for cats</a></button>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="foodforcat.html">Food</a></li>
+                  <li><a class="dropdown-item" href="accessoriesforcat.html">Accessories</a></li>
+                </ul>
+              </div>
+            <a href="index.html#services">services</a>
+            <a href="index.html#contact">contact</a>
         </nav>
+
 
         <div class="icons">
             <div class="fas fa-bars" id="menu-butoni"></div>
@@ -159,21 +184,15 @@
     <!-- header section ends -->
     <div class="photos">
         <div class="single-photo">
-            <img src="catsfoood.png" alt="">
+            <img src="cproducts1.png" alt="">
             <div class="photo-text">
-                <h3>FOOD</h3>
+                <a href="foodforcat.html"><h3>FOOD</h3></a>
             </div>
         </div>
         <div class="single-photo">
-            <img src="catsfoood.png" alt="">
+            <img src="IMG_7071.jpeg" alt="">
             <div class="photo-text">
-                <h3>ACCESSORIES</h3>
-            </div>
-        </div>
-        <div class="single-photo">
-            <img src="catsfoood.png" alt="">
-            <div class="photo-text">
-                <h3>GROOMING</h3>
+                <a href="accessoriesforcat.html"><h3>ACCESSORIES</h3></a>
             </div>
         </div>
     </div>

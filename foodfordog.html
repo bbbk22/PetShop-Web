@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food for Dog</title>
+    <title>Food for Dogs</title>
      <!-- Css file link -->
      <link rel="stylesheet" href="style.css">
      <!-- Js file link -->
@@ -33,6 +33,7 @@
             border: .1rem solid #130f40;
             border-radius: 5px;
             box-shadow: 0 5px 10px #afa9a3;
+            
         }
         .products{
             display: flex;
@@ -44,6 +45,7 @@
             position: relative;
             width: 300px;
             height: 350px;
+            
         }
 
         .productsImage .face{
@@ -99,9 +101,10 @@
            
         }
         .costs h3{
-            font-size: 33px;
-            color: rgb(41, 30, 74);
-            font-style: bold;
+            font-size: 23px;
+            color: rgb(130, 39, 74);
+            /* font-style: bold; */
+            text-align: center;
         }
         .amount{
             font-size: 18px;
@@ -155,13 +158,35 @@
       <header class="header">
         <a href="#" class="logo"><i class="fas fa-paw"></i>pet shop</a>
 
+       
         <nav class="navbar">
-            <a href="index.html/#home">home</a>
-            <a href="index.html/#about">about</a>
-            <a href="index.html/#shop">shop</a>
-            <a href="index.html/#services">services</a>
-            <a href="index.html/#contact">contact</a>
+            <a href="index.html">home</a>
+            <a href="index.html#about">about</a>
+            <a href="index.html#shop">shop</a>
+            <div class="btn-group">
+                <button type="button" class="btn"><a href="dogpage.html">For Dogs</a></button>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="foodfordog.html">Food</a></li>
+                  <li><a class="dropdown-item" href="accessoriesfordog.html">Accessories</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn"><a href="catpage.html">for cats</a></button>
+                <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="foodforcat.html">Food</a></li>
+                  <li><a class="dropdown-item" href="accessoriesforcat.html">Accessories</a></li>
+                </ul>
+              </div>
+            <a href="index.html#services">services</a>
+            <a href="index.html#contact">contact</a>
         </nav>
+
 
         <div class="icons">
             <div class="fas fa-bars" id="menu-butoni"></div>
@@ -202,7 +227,7 @@
         </div>
    </div>
    <div class="costs">
-    <h3>Air-Dried Food</h3>
+    <h3>Organic dry cat food with chicken</h3>
     <div class="amount"> $15.00 - $30.00 </div>
    <div class="cards">
     <a href="#" class="fas fa-shopping-cart"></a>
@@ -224,7 +249,7 @@
         </div>
    </div>
    <div class="costs">
-    <h3>Air-Dried Food</h3>
+    <h3>Organuc puppy dry dog food</h3>
     <div class="amount"> $15.00 - $30.00 </div>
    <div class="cards">
     <a href="#" class="fas fa-shopping-cart"></a>
@@ -246,7 +271,7 @@
         </div>
    </div>
    <div class="costs">
-    <h3>Air-Dried Food</h3>
+    <h3>Organic dog food pate with chicken and salmon</h3>
     <div class="amount"> $15.00 - $30.00 </div>
    <div class="cards">
     <a href="#" class="fas fa-shopping-cart"></a>
@@ -268,7 +293,7 @@
         </div>
    </div>
    <div class="costs">
-    <h3>Air-Dried Food</h3>
+    <h3>Organic dog food chunks with beef</h3>
     <div class="amount"> $15.00 - $30.00 </div>
    <div class="cards">
     <a href="#" class="fas fa-shopping-cart"></a>
@@ -289,7 +314,7 @@
         </div>
    </div>
    <div class="costs">
-    <h3>Air-Dried Food</h3>
+    <h3>Organic dog food chunks with chicken</h3>
     <div class="amount"> $15.00 - $30.00 </div>
    <div class="cards">
     <a href="#" class="fas fa-shopping-cart"></a>
