@@ -289,27 +289,16 @@ section {
   line-height: 10px;
 }
 
-/* .RightToLeft{
-    animation: RightToLeft 15s infinite linear;
-  }
-  @keyframes RightToLeft {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  } */
-.LeftToRight {
-  animation: LeftToRight 15s infinite linear;
+.RightToLeft {
+  animation: RightToLeft 15s infinite linear;
 }
 
-@keyframes LeftToRight {
+@keyframes RightToLeft {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
 }
 .shop .box-container {
@@ -410,7 +399,7 @@ section {
 }
 
 .container_slider {
-  width: 100%;
+  width: 90%;
   height: 100%;
   margin: auto;
   display: flex;

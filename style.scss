@@ -394,7 +394,7 @@ section {
     line-height: 10px;
 }
 
-/* .RightToLeft{
+.RightToLeft{
     animation: RightToLeft 15s infinite linear;
   }
   @keyframes RightToLeft {
@@ -404,20 +404,20 @@ section {
     to {
       transform: translateX(-50%);
     }
-  } */
-.LeftToRight {
-    animation: LeftToRight 15s infinite linear;
-}
+  } 
+// .LeftToRight {
+//     animation: LeftToRight 15s infinite linear;
+// }
 
-@keyframes LeftToRight {
-    from {
-        transform: translateX(-50%);
-    }
+// @keyframes LeftToRight {
+//     from {
+//         transform: translateX(-50%);
+//     }
 
-    to {
-        transform: translateX(0%);
-    }
-}
+//     to {
+//         transform: translateX(0%);
+//     }
+// }
 
 
 .shop .box-container {
@@ -540,7 +540,7 @@ section {
     box-sizing: border-box;
 }
 .container_slider{
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
